@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 166154882}
   - component: {fileID: 166154881}
   - component: {fileID: 166154880}
+  - component: {fileID: 166154883}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Untagged
@@ -231,6 +232,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 166154878}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &166154883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166154878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14586c28bea39bf4bb33b4704cdb7a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomColorNoBlack
+  minBrightness: 0.3
 --- !u!1 &182302192
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,6 +257,7 @@ GameObject:
   - component: {fileID: 182302196}
   - component: {fileID: 182302195}
   - component: {fileID: 182302194}
+  - component: {fileID: 182302197}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Untagged
@@ -343,6 +358,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 182302192}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &182302197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182302192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14586c28bea39bf4bb33b4704cdb7a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomColorNoBlack
+  minBrightness: 0.3
 --- !u!1 &254625899
 GameObject:
   m_ObjectHideFlags: 0
@@ -355,6 +383,7 @@ GameObject:
   - component: {fileID: 254625903}
   - component: {fileID: 254625902}
   - component: {fileID: 254625901}
+  - component: {fileID: 254625904}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Untagged
@@ -455,6 +484,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 254625899}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &254625904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254625899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14586c28bea39bf4bb33b4704cdb7a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomColorNoBlack
+  minBrightness: 0.3
 --- !u!1 &283493126
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,6 +509,7 @@ GameObject:
   - component: {fileID: 283493130}
   - component: {fileID: 283493129}
   - component: {fileID: 283493128}
+  - component: {fileID: 283493131}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Untagged
@@ -567,6 +610,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 283493126}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &283493131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283493126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14586c28bea39bf4bb33b4704cdb7a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomColorNoBlack
+  minBrightness: 0.3
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -716,6 +772,7 @@ GameObject:
   - component: {fileID: 394854349}
   - component: {fileID: 394854348}
   - component: {fileID: 394854347}
+  - component: {fileID: 394854350}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Untagged
@@ -816,6 +873,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 394854345}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &394854350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394854345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14586c28bea39bf4bb33b4704cdb7a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomColorNoBlack
+  minBrightness: 0.3
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,6 +1025,7 @@ GameObject:
   - component: {fileID: 448119924}
   - component: {fileID: 448119923}
   - component: {fileID: 448119922}
+  - component: {fileID: 448119925}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Untagged
@@ -1055,6 +1126,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 448119920}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &448119925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448119920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14586c28bea39bf4bb33b4704cdb7a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomColorNoBlack
+  minBrightness: 0.3
 --- !u!1 &664048780
 GameObject:
   m_ObjectHideFlags: 0
@@ -1067,6 +1151,7 @@ GameObject:
   - component: {fileID: 664048784}
   - component: {fileID: 664048783}
   - component: {fileID: 664048782}
+  - component: {fileID: 664048785}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Untagged
@@ -1167,6 +1252,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 664048780}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &664048785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664048780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14586c28bea39bf4bb33b4704cdb7a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomColorNoBlack
+  minBrightness: 0.3
 --- !u!1 &701228037
 GameObject:
   m_ObjectHideFlags: 0
@@ -1179,6 +1277,7 @@ GameObject:
   - component: {fileID: 701228041}
   - component: {fileID: 701228040}
   - component: {fileID: 701228039}
+  - component: {fileID: 701228042}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Untagged
@@ -1279,6 +1378,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701228037}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &701228042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701228037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14586c28bea39bf4bb33b4704cdb7a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomColorNoBlack
+  minBrightness: 0.3
 --- !u!1 &753290628
 GameObject:
   m_ObjectHideFlags: 0
@@ -1291,6 +1403,7 @@ GameObject:
   - component: {fileID: 753290632}
   - component: {fileID: 753290631}
   - component: {fileID: 753290630}
+  - component: {fileID: 753290633}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Untagged
@@ -1391,6 +1504,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 753290628}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &753290633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753290628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14586c28bea39bf4bb33b4704cdb7a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomColorNoBlack
+  minBrightness: 0.3
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -1452,6 +1578,7 @@ GameObject:
   - component: {fileID: 845658127}
   - component: {fileID: 845658126}
   - component: {fileID: 845658125}
+  - component: {fileID: 845658128}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Untagged
@@ -1552,6 +1679,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 845658123}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &845658128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845658123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14586c28bea39bf4bb33b4704cdb7a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomColorNoBlack
+  minBrightness: 0.3
 --- !u!1 &850958645
 GameObject:
   m_ObjectHideFlags: 0
@@ -1564,6 +1704,7 @@ GameObject:
   - component: {fileID: 850958649}
   - component: {fileID: 850958648}
   - component: {fileID: 850958647}
+  - component: {fileID: 850958650}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Untagged
@@ -1664,6 +1805,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 850958645}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &850958650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850958645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14586c28bea39bf4bb33b4704cdb7a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomColorNoBlack
+  minBrightness: 0.3
 --- !u!1 &868403385
 GameObject:
   m_ObjectHideFlags: 0
@@ -1676,6 +1830,7 @@ GameObject:
   - component: {fileID: 868403389}
   - component: {fileID: 868403388}
   - component: {fileID: 868403387}
+  - component: {fileID: 868403390}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Untagged
@@ -1776,6 +1931,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 868403385}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &868403390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868403385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14586c28bea39bf4bb33b4704cdb7a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomColorNoBlack
+  minBrightness: 0.3
 --- !u!1 &1022007594
 GameObject:
   m_ObjectHideFlags: 0
@@ -1788,6 +1956,7 @@ GameObject:
   - component: {fileID: 1022007598}
   - component: {fileID: 1022007597}
   - component: {fileID: 1022007596}
+  - component: {fileID: 1022007599}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Untagged
@@ -1888,6 +2057,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1022007594}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1022007599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022007594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14586c28bea39bf4bb33b4704cdb7a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomColorNoBlack
+  minBrightness: 0.3
 --- !u!1 &1040234366
 GameObject:
   m_ObjectHideFlags: 0
@@ -1900,6 +2082,7 @@ GameObject:
   - component: {fileID: 1040234370}
   - component: {fileID: 1040234369}
   - component: {fileID: 1040234368}
+  - component: {fileID: 1040234371}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Untagged
@@ -2000,6 +2183,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1040234366}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1040234371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040234366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14586c28bea39bf4bb33b4704cdb7a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomColorNoBlack
+  minBrightness: 0.3
 --- !u!1 &1294447984
 GameObject:
   m_ObjectHideFlags: 0
@@ -2012,6 +2208,7 @@ GameObject:
   - component: {fileID: 1294447988}
   - component: {fileID: 1294447987}
   - component: {fileID: 1294447986}
+  - component: {fileID: 1294447989}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Untagged
@@ -2112,6 +2309,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1294447984}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1294447989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294447984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14586c28bea39bf4bb33b4704cdb7a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomColorNoBlack
+  minBrightness: 0.3
 --- !u!1 &1402139328
 GameObject:
   m_ObjectHideFlags: 0
@@ -2124,6 +2334,7 @@ GameObject:
   - component: {fileID: 1402139332}
   - component: {fileID: 1402139331}
   - component: {fileID: 1402139330}
+  - component: {fileID: 1402139333}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Untagged
@@ -2224,6 +2435,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1402139328}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1402139333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402139328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14586c28bea39bf4bb33b4704cdb7a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomColorNoBlack
+  minBrightness: 0.3
 --- !u!1 &1463017753
 GameObject:
   m_ObjectHideFlags: 0
@@ -2236,6 +2460,7 @@ GameObject:
   - component: {fileID: 1463017757}
   - component: {fileID: 1463017756}
   - component: {fileID: 1463017755}
+  - component: {fileID: 1463017758}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Untagged
@@ -2336,6 +2561,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1463017753}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1463017758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463017753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14586c28bea39bf4bb33b4704cdb7a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomColorNoBlack
+  minBrightness: 0.3
 --- !u!1 &1486275370
 GameObject:
   m_ObjectHideFlags: 0
@@ -2348,6 +2586,7 @@ GameObject:
   - component: {fileID: 1486275374}
   - component: {fileID: 1486275373}
   - component: {fileID: 1486275372}
+  - component: {fileID: 1486275375}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Untagged
@@ -2448,6 +2687,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1486275370}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1486275375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486275370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14586c28bea39bf4bb33b4704cdb7a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomColorNoBlack
+  minBrightness: 0.3
 --- !u!1 &1525905544
 GameObject:
   m_ObjectHideFlags: 0
@@ -2460,6 +2712,7 @@ GameObject:
   - component: {fileID: 1525905548}
   - component: {fileID: 1525905547}
   - component: {fileID: 1525905546}
+  - component: {fileID: 1525905549}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Untagged
@@ -2560,6 +2813,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1525905544}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1525905549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525905544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14586c28bea39bf4bb33b4704cdb7a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomColorNoBlack
+  minBrightness: 0.3
 --- !u!1 &1537547328
 GameObject:
   m_ObjectHideFlags: 0
@@ -2572,6 +2838,7 @@ GameObject:
   - component: {fileID: 1537547332}
   - component: {fileID: 1537547331}
   - component: {fileID: 1537547330}
+  - component: {fileID: 1537547333}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Untagged
@@ -2672,6 +2939,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1537547328}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1537547333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537547328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14586c28bea39bf4bb33b4704cdb7a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomColorNoBlack
+  minBrightness: 0.3
 --- !u!1 &1624694973
 GameObject:
   m_ObjectHideFlags: 0
@@ -2740,6 +3020,7 @@ GameObject:
   - component: {fileID: 1709408006}
   - component: {fileID: 1709408005}
   - component: {fileID: 1709408004}
+  - component: {fileID: 1709408007}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Untagged
@@ -2840,6 +3121,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1709408002}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1709408007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709408002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14586c28bea39bf4bb33b4704cdb7a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomColorNoBlack
+  minBrightness: 0.3
 --- !u!1 &1717735374
 GameObject:
   m_ObjectHideFlags: 0
@@ -2852,6 +3146,7 @@ GameObject:
   - component: {fileID: 1717735378}
   - component: {fileID: 1717735377}
   - component: {fileID: 1717735376}
+  - component: {fileID: 1717735379}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Untagged
@@ -2952,6 +3247,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1717735374}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1717735379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717735374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14586c28bea39bf4bb33b4704cdb7a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomColorNoBlack
+  minBrightness: 0.3
 --- !u!1 &2036982145
 GameObject:
   m_ObjectHideFlags: 0
@@ -2964,6 +3272,7 @@ GameObject:
   - component: {fileID: 2036982149}
   - component: {fileID: 2036982148}
   - component: {fileID: 2036982147}
+  - component: {fileID: 2036982150}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Untagged
@@ -3064,6 +3373,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2036982145}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2036982150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036982145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14586c28bea39bf4bb33b4704cdb7a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomColorNoBlack
+  minBrightness: 0.3
 --- !u!1 &2092991330
 GameObject:
   m_ObjectHideFlags: 0
@@ -3076,6 +3398,7 @@ GameObject:
   - component: {fileID: 2092991334}
   - component: {fileID: 2092991333}
   - component: {fileID: 2092991332}
+  - component: {fileID: 2092991335}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Untagged
@@ -3176,6 +3499,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2092991330}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2092991335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092991330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14586c28bea39bf4bb33b4704cdb7a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomColorNoBlack
+  minBrightness: 0.3
 --- !u!1 &2144461003
 GameObject:
   m_ObjectHideFlags: 0
@@ -3188,6 +3524,7 @@ GameObject:
   - component: {fileID: 2144461007}
   - component: {fileID: 2144461006}
   - component: {fileID: 2144461005}
+  - component: {fileID: 2144461008}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Untagged
@@ -3288,6 +3625,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2144461003}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2144461008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144461003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14586c28bea39bf4bb33b4704cdb7a9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RandomColorNoBlack
+  minBrightness: 0.3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
