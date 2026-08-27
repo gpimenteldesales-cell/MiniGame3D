@@ -6,10 +6,6 @@ public class PlayerMove : MonoBehaviour
     [Header("Movimento")]
     public float velocidade = 6f;
 
-    [Tooltip("Se marcado, o player gira suavemente pra encarar a direção que está andando")]
-    public bool virarNaDirecao = true;
-    public float velocidadeGiro = 720f; // graus por segundo
-
     [Header("Câmera isométrica")]
     [Tooltip("Câmera usada como referência de direção. Se vazio, usa Camera.main")]
     public Transform referenciaCamera;
@@ -21,8 +17,8 @@ public class PlayerMove : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 
-        // Trava a rotação física pra não tombar (o giro visual é feito manualmente abaixo)
-        rb.freezeRotation = true;
+        // Trava todas as rotações (X, Y e Z) — o player nunca gira, nem por física nem por script
+        rb.constraints = RigidbodyConstraints.FreezeRotation;
 
         if (referenciaCamera == null && Camera.main != null)
             referenciaCamera = Camera.main.transform;
@@ -64,13 +60,5 @@ public class PlayerMove : MonoBehaviour
         // Move o Rigidbody de forma segura com a física (colisores e triggers continuam funcionando)
         Vector3 novaPosicao = rb.position + direcaoMovimento * velocidade * Time.fixedDeltaTime;
         rb.MovePosition(novaPosicao);
-
-        // Gira o player suavemente na direção do movimento
-        if (virarNaDirecao && direcaoMovimento.sqrMagnitude > 0.01f)
-        {
-            Quaternion rotacaoAlvo = Quaternion.LookRotation(direcaoMovimento, Vector3.up);
-            Quaternion novaRotacao = Quaternion.RotateTowards(rb.rotation, rotacaoAlvo, velocidadeGiro * Time.fixedDeltaTime);
-            rb.MoveRotation(novaRotacao);
-        }
     }
 }
