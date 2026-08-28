@@ -85,10 +85,7 @@ public class GameManager : MonoBehaviour
             RodadaPerdida();
         }
     }
-
-    /// <summary>
     /// Chamado pelo GridBlock quando o player entra em um bloco.
-    /// </summary>
     public void OnPlayerEnteredBlock(GridBlock block)
     {
         currentBlock = block;
@@ -126,10 +123,7 @@ public class GameManager : MonoBehaviour
         onRoundLost?.Invoke();
         onGameOver?.Invoke();
     }
-
-    /// <summary>
     /// Chame isso num botão de "Reiniciar" pra recomeçar do zero.
-    /// </summary>
     public void ReiniciarJogo()
     {
         tempoAtual = tempoInicial;
