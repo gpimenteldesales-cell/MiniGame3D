@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     private Color targetColor;
     private float tempoAtual;
     private Coroutine timerCoroutine;
+    private Coroutine loopDerrotaCoroutine;
     private bool roundActive;
     private int rodada = 0;
 
@@ -132,10 +133,32 @@ public class GameManager : MonoBehaviour
     {
         roundActive = false;
 
-        yield return PiscarBlocos(Color.red);
-
         onRoundLost?.Invoke();
         onGameOver?.Invoke();
+
+        // Pisca vermelho pra sempre, até o jogador chamar ReiniciarJogo()
+        loopDerrotaCoroutine = StartCoroutine(PiscarBlocosInfinito(Color.red));
+
+        yield break;
+    }
+
+    /// <summary>
+    /// Igual ao PiscarBlocos, mas nunca para sozinho (usado no Game Over).
+    /// </summary>
+    private IEnumerator PiscarBlocosInfinito(Color corFeedback)
+    {
+        while (true)
+        {
+            foreach (var block in blocks)
+                block.SetVisualColor(corFeedback);
+
+            yield return new WaitForSeconds(intervaloPiscada);
+
+            foreach (var block in blocks)
+                block.SetVisualColor(block.BlockColor);
+
+            yield return new WaitForSeconds(intervaloPiscada);
+        }
     }
 
     /// <summary>
@@ -162,6 +185,12 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void ReiniciarJogo()
     {
+        if (loopDerrotaCoroutine != null)
+        {
+            StopCoroutine(loopDerrotaCoroutine);
+            loopDerrotaCoroutine = null;
+        }
+
         tempoAtual = tempoInicial;
         rodada = 0;
         NovaRodada();
