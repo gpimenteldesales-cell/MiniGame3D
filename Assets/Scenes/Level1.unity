@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 166154883}
   m_Layer: 0
   m_Name: PlataformersLocalizations
-  m_TagString: Untagged
+  m_TagString: Plataformers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -149,8 +149,8 @@ Transform:
   m_GameObject: {fileID: 166154878}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 16, z: 10}
+  m_LocalPosition: {x: -20, y: 1.1569, z: 0}
+  m_LocalScale: {x: 10, y: 13.686376, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1624694974}
@@ -282,7 +282,7 @@ GameObject:
   - component: {fileID: 182302197}
   m_Layer: 0
   m_Name: PlataformersLocalizations
-  m_TagString: Untagged
+  m_TagString: Plataformers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -296,8 +296,8 @@ Transform:
   m_GameObject: {fileID: 182302192}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10, y: 0, z: 20}
-  m_LocalScale: {x: 10, y: 16, z: 10}
+  m_LocalPosition: {x: -10, y: 1.1569, z: 20}
+  m_LocalScale: {x: 10, y: 13.686376, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1624694974}
@@ -459,9 +459,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   blocksParent: {fileID: 1624694974}
   minBrightness: 0.3
-  tempoInicial: 3
-  tempoMinimo: 0.6
+  tempoInicial: 20
+  tempoMinimo: 2
   reducaoPorRodada: 0.95
+  corPadraoBlocos: {r: 0.08627451, g: 0.08235294, b: 0.1137255, a: 1}
+  quantidadePiscadas: 9
+  intervaloPiscada: 1
+  pausaAposVitoria: 0.5
   onRoundWon:
     m_PersistentCalls:
       m_Calls: []
@@ -487,7 +491,7 @@ GameObject:
   - component: {fileID: 254625904}
   m_Layer: 0
   m_Name: PlataformersLocalizations
-  m_TagString: Untagged
+  m_TagString: Plataformers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -501,8 +505,8 @@ Transform:
   m_GameObject: {fileID: 254625899}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -30, y: 0, z: 10}
-  m_LocalScale: {x: 10, y: 16, z: 10}
+  m_LocalPosition: {x: -30, y: 1.1569, z: 10}
+  m_LocalScale: {x: 10, y: 13.686376, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1624694974}
@@ -634,7 +638,7 @@ GameObject:
   - component: {fileID: 283493131}
   m_Layer: 0
   m_Name: PlataformersLocalizations
-  m_TagString: Untagged
+  m_TagString: Plataformers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -648,8 +652,8 @@ Transform:
   m_GameObject: {fileID: 283493126}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 30}
-  m_LocalScale: {x: 10, y: 16, z: 10}
+  m_LocalPosition: {x: -0, y: 1.1569, z: 30}
+  m_LocalScale: {x: 10, y: 13.686376, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1624694974}
@@ -802,7 +806,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0.64864874, b: 1, a: 0}
+  m_BackGroundColor: {r: 1, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -902,6 +906,55 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!1 &371740883
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 371740885}
+  - component: {fileID: 371740884}
+  m_Layer: 0
+  m_Name: ColorSat
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &371740884
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371740883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.Volume
+  m_IsGlobal: 1
+  priority: 1
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 796b0daa7dd32dc42a446b1e92bd186f, type: 2}
+--- !u!4 &371740885
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371740883}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -12.251724, y: -18.571583, z: -30.9571}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &394854345
 GameObject:
   m_ObjectHideFlags: 0
@@ -918,7 +971,7 @@ GameObject:
   - component: {fileID: 394854350}
   m_Layer: 0
   m_Name: PlataformersLocalizations
-  m_TagString: Untagged
+  m_TagString: Plataformers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -932,8 +985,8 @@ Transform:
   m_GameObject: {fileID: 394854345}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20, y: 0, z: 30}
-  m_LocalScale: {x: 10, y: 16, z: 10}
+  m_LocalPosition: {x: -20, y: 1.1569, z: 30}
+  m_LocalScale: {x: 10, y: 13.686376, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1624694974}
@@ -1078,13 +1131,13 @@ Light:
   serializedVersion: 12
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 3.4
+  m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
-  m_CookieSize2D: {x: 10, y: 10}
+  m_CookieSize2D: {x: 0.5, y: 0.5}
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -1121,8 +1174,8 @@ Light:
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
-  m_ColorTemperature: 5667
-  m_UseColorTemperature: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
   m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
@@ -1192,7 +1245,7 @@ GameObject:
   - component: {fileID: 448119925}
   m_Layer: 0
   m_Name: PlataformersLocalizations
-  m_TagString: Untagged
+  m_TagString: Plataformers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1206,8 +1259,8 @@ Transform:
   m_GameObject: {fileID: 448119920}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20, y: 0, z: 20}
-  m_LocalScale: {x: 10, y: 16, z: 10}
+  m_LocalPosition: {x: -20, y: 1.1569, z: 20}
+  m_LocalScale: {x: 10, y: 13.686376, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1624694974}
@@ -1339,7 +1392,7 @@ GameObject:
   - component: {fileID: 664048785}
   m_Layer: 0
   m_Name: PlataformersLocalizations
-  m_TagString: Untagged
+  m_TagString: Plataformers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1353,8 +1406,8 @@ Transform:
   m_GameObject: {fileID: 664048780}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -30, y: 0, z: 40}
-  m_LocalScale: {x: 10, y: 16, z: 10}
+  m_LocalPosition: {x: -30, y: 1.1569, z: 40}
+  m_LocalScale: {x: 10, y: 13.686376, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1624694974}
@@ -1481,35 +1534,13 @@ GameObject:
   - component: {fileID: 691495448}
   - component: {fileID: 691495447}
   - component: {fileID: 691495446}
-  - component: {fileID: 691495445}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: MasterColl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!65 &691495445
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 691495444}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &691495446
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1536,6 +1567,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: f54c9035298e99e45899e1cea21206c7, type: 2}
+  - {fileID: 2100000, guid: 260213ecfc75f03469efb43db60e4ddb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1575,12 +1607,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 691495444}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -20.4, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -20, y: 0.4996, z: 20}
   m_LocalScale: {x: 50.1, y: 15, z: 50.1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1624694974}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &701228037
 GameObject:
@@ -1598,7 +1630,7 @@ GameObject:
   - component: {fileID: 701228042}
   m_Layer: 0
   m_Name: PlataformersLocalizations
-  m_TagString: Untagged
+  m_TagString: Plataformers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1612,8 +1644,8 @@ Transform:
   m_GameObject: {fileID: 701228037}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -30, y: 0, z: 30}
-  m_LocalScale: {x: 10, y: 16, z: 10}
+  m_LocalPosition: {x: -30, y: 1.1569, z: 30}
+  m_LocalScale: {x: 10, y: 13.686376, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1624694974}
@@ -1745,7 +1777,7 @@ GameObject:
   - component: {fileID: 753290633}
   m_Layer: 0
   m_Name: PlataformersLocalizations
-  m_TagString: Untagged
+  m_TagString: Plataformers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1759,8 +1791,8 @@ Transform:
   m_GameObject: {fileID: 753290628}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -30, y: 0, z: 20}
-  m_LocalScale: {x: 10, y: 16, z: 10}
+  m_LocalPosition: {x: -30, y: 1.1569, z: 20}
+  m_LocalScale: {x: 10, y: 13.686376, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1624694974}
@@ -1876,55 +1908,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &832575517
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 832575519}
-  - component: {fileID: 832575518}
-  m_Layer: 0
-  m_Name: Global Volume
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &832575518
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 832575517}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IsGlobal: 1
-  priority: 0
-  blendDistance: 0
-  weight: 1
-  sharedProfile: {fileID: 11400000, guid: 10fc4df2da32a41aaa32d77bc913491c, type: 2}
---- !u!4 &832575519
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 832575517}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &845658123
 GameObject:
   m_ObjectHideFlags: 0
@@ -1941,7 +1924,7 @@ GameObject:
   - component: {fileID: 845658128}
   m_Layer: 0
   m_Name: PlataformersLocalizations
-  m_TagString: Untagged
+  m_TagString: Plataformers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1955,8 +1938,8 @@ Transform:
   m_GameObject: {fileID: 845658123}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -30, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 16, z: 10}
+  m_LocalPosition: {x: -30, y: 1.1569, z: 0}
+  m_LocalScale: {x: 10, y: 13.686376, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1624694974}
@@ -2088,7 +2071,7 @@ GameObject:
   - component: {fileID: 850958650}
   m_Layer: 0
   m_Name: PlataformersLocalizations
-  m_TagString: Untagged
+  m_TagString: Plataformers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2102,8 +2085,8 @@ Transform:
   m_GameObject: {fileID: 850958645}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10, y: 0, z: 40}
-  m_LocalScale: {x: 10, y: 16, z: 10}
+  m_LocalPosition: {x: -10, y: 1.1569, z: 40}
+  m_LocalScale: {x: 10, y: 13.686376, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1624694974}
@@ -2235,7 +2218,7 @@ GameObject:
   - component: {fileID: 868403390}
   m_Layer: 0
   m_Name: PlataformersLocalizations
-  m_TagString: Untagged
+  m_TagString: Plataformers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2249,8 +2232,8 @@ Transform:
   m_GameObject: {fileID: 868403385}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10, y: 0, z: 10}
-  m_LocalScale: {x: 10, y: 16, z: 10}
+  m_LocalPosition: {x: -10, y: 1.1569, z: 10}
+  m_LocalScale: {x: 10, y: 13.686376, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1624694974}
@@ -2382,7 +2365,7 @@ GameObject:
   - component: {fileID: 1022007599}
   m_Layer: 0
   m_Name: PlataformersLocalizations
-  m_TagString: Untagged
+  m_TagString: Plataformers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2396,8 +2379,8 @@ Transform:
   m_GameObject: {fileID: 1022007594}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -40, y: 0, z: 10}
-  m_LocalScale: {x: 10, y: 16, z: 10}
+  m_LocalPosition: {x: -40, y: 1.1569, z: 10}
+  m_LocalScale: {x: 10, y: 13.686376, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1624694974}
@@ -2529,7 +2512,7 @@ GameObject:
   - component: {fileID: 1040234371}
   m_Layer: 0
   m_Name: PlataformersLocalizations
-  m_TagString: Untagged
+  m_TagString: Plataformers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2543,8 +2526,8 @@ Transform:
   m_GameObject: {fileID: 1040234366}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 16, z: 10}
+  m_LocalPosition: {x: -0, y: 1.1569, z: 0}
+  m_LocalScale: {x: 10, y: 13.686376, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1624694974}
@@ -2676,7 +2659,7 @@ GameObject:
   - component: {fileID: 1294447989}
   m_Layer: 0
   m_Name: PlataformersLocalizations
-  m_TagString: Untagged
+  m_TagString: Plataformers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2690,8 +2673,8 @@ Transform:
   m_GameObject: {fileID: 1294447984}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 10}
-  m_LocalScale: {x: 10, y: 16, z: 10}
+  m_LocalPosition: {x: -0, y: 1.1569, z: 10}
+  m_LocalScale: {x: 10, y: 13.686376, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1624694974}
@@ -2823,7 +2806,7 @@ GameObject:
   - component: {fileID: 1402139333}
   m_Layer: 0
   m_Name: PlataformersLocalizations
-  m_TagString: Untagged
+  m_TagString: Plataformers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2837,8 +2820,8 @@ Transform:
   m_GameObject: {fileID: 1402139328}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 16, z: 10}
+  m_LocalPosition: {x: -10, y: 1.1569, z: 0}
+  m_LocalScale: {x: 10, y: 13.686376, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1624694974}
@@ -2970,7 +2953,7 @@ GameObject:
   - component: {fileID: 1463017758}
   m_Layer: 0
   m_Name: PlataformersLocalizations
-  m_TagString: Untagged
+  m_TagString: Plataformers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2984,8 +2967,8 @@ Transform:
   m_GameObject: {fileID: 1463017753}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -40, y: 0, z: 40}
-  m_LocalScale: {x: 10, y: 16, z: 10}
+  m_LocalPosition: {x: -40, y: 1.1569, z: 40}
+  m_LocalScale: {x: 10, y: 13.686376, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1624694974}
@@ -3117,7 +3100,7 @@ GameObject:
   - component: {fileID: 1486275375}
   m_Layer: 0
   m_Name: PlataformersLocalizations
-  m_TagString: Untagged
+  m_TagString: Plataformers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3131,8 +3114,8 @@ Transform:
   m_GameObject: {fileID: 1486275370}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -10, y: 0, z: 30}
-  m_LocalScale: {x: 10, y: 16, z: 10}
+  m_LocalPosition: {x: -10, y: 1.1569, z: 30}
+  m_LocalScale: {x: 10, y: 13.686376, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1624694974}
@@ -3264,7 +3247,7 @@ GameObject:
   - component: {fileID: 1525905549}
   m_Layer: 0
   m_Name: PlataformersLocalizations
-  m_TagString: Untagged
+  m_TagString: Plataformers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3278,8 +3261,8 @@ Transform:
   m_GameObject: {fileID: 1525905544}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 40}
-  m_LocalScale: {x: 10, y: 16, z: 10}
+  m_LocalPosition: {x: -0, y: 1.1569, z: 40}
+  m_LocalScale: {x: 10, y: 13.686376, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1624694974}
@@ -3411,7 +3394,7 @@ GameObject:
   - component: {fileID: 1537547333}
   m_Layer: 0
   m_Name: PlataformersLocalizations
-  m_TagString: Untagged
+  m_TagString: Plataformers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3425,8 +3408,8 @@ Transform:
   m_GameObject: {fileID: 1537547328}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -40, y: 0, z: 30}
-  m_LocalScale: {x: 10, y: 16, z: 10}
+  m_LocalPosition: {x: -40, y: 1.1569, z: 30}
+  m_LocalScale: {x: 10, y: 13.686376, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1624694974}
@@ -3552,8 +3535,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1624694974}
   m_Layer: 0
-  m_Name: Blocks
-  m_TagString: Untagged
+  m_Name: Plataformers
+  m_TagString: Plataformers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3596,6 +3579,8 @@ Transform:
   - {fileID: 1709408003}
   - {fileID: 1402139329}
   - {fileID: 1040234367}
+  - {fileID: 691495448}
+  - {fileID: 1867791119}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1658480743
@@ -3665,8 +3650,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.1543375, z: 1}
+  m_Center: {x: 0, y: -0.07716876, z: 0}
 --- !u!23 &1658480746
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3693,6 +3678,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: e847f9af64e11834faf66eda619519ed, type: 2}
+  - {fileID: 2100000, guid: ea66af5fc9bf674419745f1adf185e17, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3733,7 +3719,7 @@ Transform:
   m_GameObject: {fileID: 1658480743}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -10, z: 0}
+  m_LocalPosition: {x: 0, y: -6.94, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3751,7 +3737,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d90b2266550c9740b0fa66c30c06211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  velocidade: 30
+  velocidade: 40
   referenciaCamera: {fileID: 330585546}
 --- !u!1 &1709408002
 GameObject:
@@ -3769,7 +3755,7 @@ GameObject:
   - component: {fileID: 1709408007}
   m_Layer: 0
   m_Name: PlataformersLocalizations
-  m_TagString: Untagged
+  m_TagString: Plataformers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3783,8 +3769,8 @@ Transform:
   m_GameObject: {fileID: 1709408002}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -40, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 16, z: 10}
+  m_LocalPosition: {x: -40, y: 1.1569, z: 0}
+  m_LocalScale: {x: 10, y: 13.686376, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1624694974}
@@ -3916,7 +3902,7 @@ GameObject:
   - component: {fileID: 1717735379}
   m_Layer: 0
   m_Name: PlataformersLocalizations
-  m_TagString: Untagged
+  m_TagString: Plataformers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3930,8 +3916,8 @@ Transform:
   m_GameObject: {fileID: 1717735374}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20, y: 0, z: 40}
-  m_LocalScale: {x: 10, y: 16, z: 10}
+  m_LocalPosition: {x: -20, y: 1.1569, z: 40}
+  m_LocalScale: {x: 10, y: 13.686376, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1624694974}
@@ -4047,6 +4033,183 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &1867791112
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1867791119}
+  - component: {fileID: 1867791118}
+  - component: {fileID: 1867791117}
+  - component: {fileID: 1867791116}
+  - component: {fileID: 1867791115}
+  - component: {fileID: 1867791114}
+  - component: {fileID: 1867791113}
+  m_Layer: 0
+  m_Name: Colliders
+  m_TagString: Plataformers
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!65 &1867791113
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867791112}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 0.030410422}
+  m_Center: {x: 0, y: 0, z: 0.51610786}
+--- !u!65 &1867791114
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867791112}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.040848427, y: 1, z: 1}
+  m_Center: {x: 0.51625854, y: 0, z: 0}
+--- !u!65 &1867791115
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867791112}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 0.026007613}
+  m_Center: {x: 0, y: 0, z: -0.50984067}
+--- !u!65 &1867791116
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867791112}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.013852386, y: 1, z: 1}
+  m_Center: {x: -0.5108788, y: 0, z: 0}
+--- !u!23 &1867791117
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867791112}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials: []
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &1867791118
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867791112}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1867791119
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1867791112}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -20, y: 12, z: 20}
+  m_LocalScale: {x: 50, y: 7, z: 50}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1624694974}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2036982145
 GameObject:
   m_ObjectHideFlags: 0
@@ -4063,7 +4226,7 @@ GameObject:
   - component: {fileID: 2036982150}
   m_Layer: 0
   m_Name: PlataformersLocalizations
-  m_TagString: Untagged
+  m_TagString: Plataformers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4077,8 +4240,8 @@ Transform:
   m_GameObject: {fileID: 2036982145}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 20}
-  m_LocalScale: {x: 10, y: 16, z: 10}
+  m_LocalPosition: {x: -0, y: 1.1569, z: 20}
+  m_LocalScale: {x: 10, y: 13.686376, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1624694974}
@@ -4210,7 +4373,7 @@ GameObject:
   - component: {fileID: 2092991335}
   m_Layer: 0
   m_Name: PlataformersLocalizations
-  m_TagString: Untagged
+  m_TagString: Plataformers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4224,8 +4387,8 @@ Transform:
   m_GameObject: {fileID: 2092991330}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -40, y: 0, z: 20}
-  m_LocalScale: {x: 10, y: 16, z: 10}
+  m_LocalPosition: {x: -40, y: 1.1569, z: 20}
+  m_LocalScale: {x: 10, y: 13.686376, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1624694974}
@@ -4357,7 +4520,7 @@ GameObject:
   - component: {fileID: 2144461008}
   m_Layer: 0
   m_Name: PlataformersLocalizations
-  m_TagString: Untagged
+  m_TagString: Plataformers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4371,8 +4534,8 @@ Transform:
   m_GameObject: {fileID: 2144461003}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -20, y: 0, z: 10}
-  m_LocalScale: {x: 10, y: 16, z: 10}
+  m_LocalPosition: {x: -20, y: 1.1569, z: 10}
+  m_LocalScale: {x: 10, y: 13.686376, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1624694974}
@@ -4493,9 +4656,8 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 330585546}
+  - {fileID: 371740885}
   - {fileID: 410087041}
-  - {fileID: 832575519}
-  - {fileID: 1624694974}
   - {fileID: 207147558}
+  - {fileID: 1624694974}
   - {fileID: 1658480748}
-  - {fileID: 691495448}
