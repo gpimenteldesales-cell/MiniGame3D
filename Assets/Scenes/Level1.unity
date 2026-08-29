@@ -458,11 +458,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   blocksParent: {fileID: 1624694974}
-  minBrightness: 0.3
-  tempoInicial: 20
-  tempoMinimo: 2
-  reducaoPorRodada: 0.95
-  corPadraoBlocos: {r: 1, g: 1, b: 1, a: 1}
+  minBrightness: 0.1
+  tempoInicial: 10
+  tempoMinimo: 3
+  reducaoPorRodada: 0.8
+  corPadraoBlocos: {r: 0.09019608, g: 0.08627451, b: 0.11764707, a: 1}
   quantidadePiscadas: 3
   intervaloPiscada: 0.8
   pausaAposVitoria: 0.5
