@@ -18,9 +18,6 @@ public class GameOverUI : MonoBehaviour
             painelGameOver.SetActive(false);
     }
 
-    /// <summary>
-    /// Ligue isso no evento "On Round Lost" (ou "On Game Over") do GameManager, no Inspector.
-    /// </summary>
     public void MostrarGameOver()
     {
         if (painelGameOver != null)
@@ -30,9 +27,6 @@ public class GameOverUI : MonoBehaviour
             blur.AtivarBlur();
     }
 
-    /// <summary>
-    /// Ligue isso no OnClick do botão "TRY AGAIN".
-    /// </summary>
     public void TryAgain()
     {
         if (painelGameOver != null)
@@ -44,9 +38,6 @@ public class GameOverUI : MonoBehaviour
         GameManager.Instance.ReiniciarJogo();
     }
 
-    /// <summary>
-    /// Ligue isso no OnClick do botão "MENU".
-    /// </summary>
     public void IrParaMenu()
     {
         SceneManager.LoadScene(nomeCenaMenu);

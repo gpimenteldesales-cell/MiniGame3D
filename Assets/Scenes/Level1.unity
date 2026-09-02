@@ -462,19 +462,56 @@ MonoBehaviour:
   tempoInicial: 10
   tempoMinimo: 3
   reducaoPorRodada: 0.8
-  corPadraoBlocos: {r: 0.09019608, g: 0.08627451, b: 0.11764707, a: 1}
+  corPadraoBlocos: {r: 1, g: 1, b: 1, a: 1}
   quantidadePiscadas: 3
   intervaloPiscada: 0.3
   pausaAposVitoria: 0.5
   onRoundWon:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 207147559}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: NovaRodada
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onRoundLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 207147559}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ReiniciarJogo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onGameOver:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1107809893}
+        m_TargetAssemblyTypeName: UnityEngine.Rendering.Volume, Unity.RenderPipelines.Core.Runtime
+        m_MethodName: set_profile
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 796b0daa7dd32dc42a446b1e92bd186f, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Rendering.VolumeProfile,
+            Unity.RenderPipelines.Core.Runtime
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &254625899
 GameObject:
   m_ObjectHideFlags: 0

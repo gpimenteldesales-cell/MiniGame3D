@@ -17,17 +17,11 @@ public class ScreenBlurController : MonoBehaviour
         volume.weight = 0f; // começa sem blur
     }
 
-    /// <summary>
-    /// Liga isso no evento "On Round Lost" do GameManager, ou chame pelo GameOverUI.
-    /// </summary>
     public void AtivarBlur()
     {
         IniciarTransicao(1f);
     }
 
-    /// <summary>
-    /// Chame ao reiniciar o jogo, pra tirar o blur.
-    /// </summary>
     public void DesativarBlur()
     {
         IniciarTransicao(0f);
