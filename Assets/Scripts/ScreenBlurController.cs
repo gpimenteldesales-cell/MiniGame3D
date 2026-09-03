@@ -5,7 +5,7 @@ using UnityEngine.Rendering;
 [RequireComponent(typeof(Volume))]
 public class ScreenBlurController : MonoBehaviour
 {
-    [Tooltip("Tempo em segundos pra transição do blur entrar/sair suavemente")]
+    [Tooltip("Tempo em segundos pra transiÃ§Ã£o do blur entrar/sair suavemente")]
     public float duracaoTransicao = 0.4f;
 
     private Volume volume;
@@ -14,14 +14,20 @@ public class ScreenBlurController : MonoBehaviour
     void Awake()
     {
         volume = GetComponent<Volume>();
-        volume.weight = 0f; // começa sem blur
+        volume.weight = 0f; // comeÃ§a sem blur
     }
 
+    /// <summary>
+    /// Liga isso no evento "On Round Lost" do GameManager, ou chame pelo GameOverUI.
+    /// </summary>
     public void AtivarBlur()
     {
         IniciarTransicao(1f);
     }
 
+    /// <summary>
+    /// Chame ao reiniciar o jogo, pra tirar o blur.
+    /// </summary>
     public void DesativarBlur()
     {
         IniciarTransicao(0f);

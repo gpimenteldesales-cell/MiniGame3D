@@ -6,8 +6,8 @@ public class PlayerMove : MonoBehaviour
     [Header("Movimento")]
     public float velocidade = 6f;
 
-    [Header("Câmera isométrica")]
-    [Tooltip("Câmera usada como referência de direção. Se vazio, usa Camera.main")]
+    [Header("CÃ¢mera isomÃ©trica")]
+    [Tooltip("CÃ¢mera usada como referÃªncia de direÃ§Ã£o. Se vazio, usa Camera.main")]
     public Transform referenciaCamera;
 
     private Rigidbody rb;
@@ -17,7 +17,7 @@ public class PlayerMove : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 
-        // Trava todas as rotações (X, Y e Z) — o player nunca gira, nem por física nem por script
+        // Trava todas as rotaÃ§Ãµes (X, Y e Z) â€” o player nunca gira, nem por fÃ­sica nem por script
         rb.constraints = RigidbodyConstraints.FreezeRotation;
 
         if (referenciaCamera == null && Camera.main != null)
@@ -26,7 +26,7 @@ public class PlayerMove : MonoBehaviour
 
     void Update()
     {
-        // Lê o input em Update (mais responsivo), aplica o movimento em FixedUpdate
+        // LÃª o input em Update (mais responsivo), aplica o movimento em FixedUpdate
         float h = Input.GetAxisRaw("Horizontal"); // A/D ou setas
         float v = Input.GetAxisRaw("Vertical");   // W/S ou setas
 
@@ -36,7 +36,7 @@ public class PlayerMove : MonoBehaviour
 
         if (referenciaCamera != null)
         {
-            // Pega a direção "pra frente" e "pra direita" da câmera, achatadas no chão (ignora inclinação)
+            // Pega a direÃ§Ã£o "pra frente" e "pra direita" da cÃ¢mera, achatadas no chÃ£o (ignora inclinaÃ§Ã£o)
             Vector3 camForward = referenciaCamera.forward;
             camForward.y = 0f;
             camForward.Normalize();
@@ -45,19 +45,19 @@ public class PlayerMove : MonoBehaviour
             camRight.y = 0f;
             camRight.Normalize();
 
-            // W = "pra frente" na tela, D = "pra direita" na tela, mesmo com a câmera em diagonal
+            // W = "pra frente" na tela, D = "pra direita" na tela, mesmo com a cÃ¢mera em diagonal
             direcaoMovimento = camForward * inputBruto.z + camRight * inputBruto.x;
         }
         else
         {
-            // Fallback: eixos do mundo, caso não tenha câmera de referência
+            // Fallback: eixos do mundo, caso nÃ£o tenha cÃ¢mera de referÃªncia
             direcaoMovimento = inputBruto;
         }
     }
 
     void FixedUpdate()
     {
-        // Move o Rigidbody de forma segura com a física (colisores e triggers continuam funcionando)
+        // Move o Rigidbody de forma segura com a fÃ­sica (colisores e triggers continuam funcionando)
         Vector3 novaPosicao = rb.position + direcaoMovimento * velocidade * Time.fixedDeltaTime;
         rb.MovePosition(novaPosicao);
     }
