@@ -19,14 +19,6 @@ public class GameManager : MonoBehaviour
     public float tempoMinimo = 0.6f;
     [Range(0.5f, 0.99f)] public float reducaoPorRodada = 0.95f;
 
-    [Header("Dificuldade de Cor")]
-    [Tooltip("Distância mínima entre a cor certa e as cores erradas no início (cores bem sólidas e diferentes)")]
-    [Range(0.05f, 1f)] public float distanciaCorInicial = 0.6f;
-    [Tooltip("Distância mínima no fim da progressão (cores bem parecidas, mais difícil de identificar)")]
-    [Range(0.02f, 0.5f)] public float distanciaCorMinima = 0.08f;
-    [Tooltip("O quanto a distância mínima encolhe a cada vitória (menor = fica difícil mais rápido)")]
-    [Range(0.5f, 0.99f)] public float reducaoCorPorRodada = 0.9f;
-
     [Header("Feedback visual (piscar)")]
     public Color corPadraoBlocos = Color.white;
     public int quantidadePiscadas = 3;
@@ -43,7 +35,6 @@ public class GameManager : MonoBehaviour
     private GridBlock currentBlock;
     private Color targetColor;
     private float tempoAtual;
-    private float distanciaCorAtual;
     private Coroutine timerCoroutine;
     private Coroutine loopDerrotaCoroutine;
     private bool roundActive;
@@ -54,7 +45,6 @@ public class GameManager : MonoBehaviour
         Instance = this;
         blocks.AddRange(blocksParent.GetComponentsInChildren<GridBlock>());
         tempoAtual = tempoInicial;
-        distanciaCorAtual = distanciaCorInicial;
     }
 
     void Start()
@@ -72,11 +62,10 @@ public class GameManager : MonoBehaviour
         targetColor = ColorUtils.RandomColorNoBlack(minBrightness);
         Camera.main.backgroundColor = targetColor;
 
-        // Sorteia a cor de cada bloco garantindo uma distância mínima da cor certa
-        // (isso evita blocos "gêmeos" por acaso, e é o que controla a dificuldade de cor)
+        // Sorteia uma cor aleatória pra cada bloco
         foreach (var block in blocks)
         {
-            block.SetColor(ColorUtils.RandomColorDiferente(targetColor, distanciaCorAtual, minBrightness));
+            block.SetColor(ColorUtils.RandomColorNoBlack(minBrightness));
         }
 
         // Garante que pelo menos um bloco tenha exatamente a cor certa
@@ -132,9 +121,8 @@ public class GameManager : MonoBehaviour
 
         onRoundWon?.Invoke();
 
-        // Aumenta a dificuldade gradualmente: tempo mais curto e cores mais parecidas
+        // Aumenta a dificuldade gradualmente (tempo mais curto a cada rodada)
         tempoAtual = Mathf.Max(tempoMinimo, tempoAtual * reducaoPorRodada);
-        distanciaCorAtual = Mathf.Max(distanciaCorMinima, distanciaCorAtual * reducaoCorPorRodada);
 
         yield return new WaitForSeconds(pausaAposVitoria);
 
@@ -204,7 +192,6 @@ public class GameManager : MonoBehaviour
         }
 
         tempoAtual = tempoInicial;
-        distanciaCorAtual = distanciaCorInicial;
         rodada = 0;
         NovaRodada();
     }

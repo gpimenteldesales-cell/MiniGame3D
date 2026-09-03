@@ -132,11 +132,11 @@ GameObject:
   - component: {fileID: 166154881}
   - component: {fileID: 166154880}
   - component: {fileID: 166154884}
-  - component: {fileID: 166154885}
+  - component: {fileID: 166154883}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Plataformers
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -233,6 +233,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 166154878}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &166154883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 166154878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!65 &166154884
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -254,18 +266,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &166154885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 166154878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!1 &182302192
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,11 +279,11 @@ GameObject:
   - component: {fileID: 182302195}
   - component: {fileID: 182302194}
   - component: {fileID: 182302198}
-  - component: {fileID: 182302199}
+  - component: {fileID: 182302197}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Plataformers
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -380,6 +380,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 182302192}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &182302197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182302192}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!65 &182302198
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -401,18 +413,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &182302199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 182302192}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!1 &207147557
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,33 +458,55 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   blocksParent: {fileID: 1624694974}
-  minBrightness: 0.3
-  tempoInicial: 3
-  tempoMinimo: 0.6
-  reducaoPorRodada: 0.95
-  distanciaCorInicial: 0.6
-  distanciaCorMinima: 0.08
-  reducaoCorPorRodada: 0.9
+  minBrightness: 0.1
+  tempoInicial: 10
+  tempoMinimo: 3
+  reducaoPorRodada: 0.8
   corPadraoBlocos: {r: 1, g: 1, b: 1, a: 1}
   quantidadePiscadas: 3
-  intervaloPiscada: 0.15
+  intervaloPiscada: 0.3
   pausaAposVitoria: 0.5
   onRoundWon:
     m_PersistentCalls:
-      m_Calls: []
-  onRoundLost:
-    m_PersistentCalls:
-      m_Calls: []
-  onGameOver:
-    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1107809893}
-        m_TargetAssemblyTypeName: GameOverUI, Assembly-CSharp
-        m_MethodName: MostrarGameOver
+      - m_Target: {fileID: 207147559}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: NovaRodada
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onRoundLost:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 207147559}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ReiniciarJogo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onGameOver:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1107809893}
+        m_TargetAssemblyTypeName: UnityEngine.Rendering.Volume, Unity.RenderPipelines.Core.Runtime
+        m_MethodName: set_profile
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 11400000, guid: 796b0daa7dd32dc42a446b1e92bd186f, type: 2}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Rendering.VolumeProfile,
+            Unity.RenderPipelines.Core.Runtime
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -503,11 +525,11 @@ GameObject:
   - component: {fileID: 254625902}
   - component: {fileID: 254625901}
   - component: {fileID: 254625905}
-  - component: {fileID: 254625906}
+  - component: {fileID: 254625904}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Plataformers
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -604,6 +626,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 254625899}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &254625904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254625899}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!65 &254625905
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -625,18 +659,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &254625906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 254625899}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!1 &283493126
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,11 +672,11 @@ GameObject:
   - component: {fileID: 283493129}
   - component: {fileID: 283493128}
   - component: {fileID: 283493132}
-  - component: {fileID: 283493133}
+  - component: {fileID: 283493131}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Plataformers
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -751,6 +773,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 283493126}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &283493131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 283493126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!65 &283493132
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -772,164 +806,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &283493133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 283493126}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
---- !u!1 &288100815
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 288100818}
-  - component: {fileID: 288100817}
-  - component: {fileID: 288100816}
-  m_Layer: 0
-  m_Name: MusicManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &288100816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 288100815}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 11b6e6e48f219ba4586acee9fc01d49d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::MusicManager
-  musicaJogo: {fileID: 8300000, guid: d8d2675d8954e7a46a2eb8ca221f96d8, type: 3}
-  somDeQuebra: {fileID: 0}
-  pitchMinimoAoQuebrar: 0.3
-  duracaoQuebra: 0.3
---- !u!82 &288100817
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 288100815}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!4 &288100818
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 288100815}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.36217, y: -4.94, z: -1.29041}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -1077,7 +953,6 @@ GameObject:
   m_Component:
   - component: {fileID: 371740885}
   - component: {fileID: 371740884}
-  - component: {fileID: 371740886}
   m_Layer: 0
   m_Name: ColorSat
   m_TagString: Untagged
@@ -1117,19 +992,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &371740886
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 371740883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f00cafb185792f746b8b5a80c87222aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ScreenBlurController
-  duracaoTransicao: 0.4
 --- !u!1 &394854345
 GameObject:
   m_ObjectHideFlags: 0
@@ -1143,11 +1005,11 @@ GameObject:
   - component: {fileID: 394854348}
   - component: {fileID: 394854347}
   - component: {fileID: 394854351}
-  - component: {fileID: 394854352}
+  - component: {fileID: 394854350}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Plataformers
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1244,6 +1106,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 394854345}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &394854350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394854345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!65 &394854351
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1265,18 +1139,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &394854352
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 394854345}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -1417,11 +1279,11 @@ GameObject:
   - component: {fileID: 448119923}
   - component: {fileID: 448119922}
   - component: {fileID: 448119926}
-  - component: {fileID: 448119927}
+  - component: {fileID: 448119925}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Plataformers
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1518,6 +1380,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 448119920}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &448119925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 448119920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!65 &448119926
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1539,18 +1413,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &448119927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 448119920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!1 &513020420
 GameObject:
   m_ObjectHideFlags: 0
@@ -1701,11 +1563,11 @@ GameObject:
   - component: {fileID: 664048783}
   - component: {fileID: 664048782}
   - component: {fileID: 664048786}
-  - component: {fileID: 664048787}
+  - component: {fileID: 664048785}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Plataformers
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -1802,6 +1664,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 664048780}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &664048785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 664048780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!65 &664048786
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1823,18 +1697,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &664048787
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 664048780}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!1 &691495444
 GameObject:
   m_ObjectHideFlags: 0
@@ -1939,11 +1801,11 @@ GameObject:
   - component: {fileID: 701228040}
   - component: {fileID: 701228039}
   - component: {fileID: 701228043}
-  - component: {fileID: 701228044}
+  - component: {fileID: 701228042}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Plataformers
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2040,6 +1902,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 701228037}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &701228042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 701228037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!65 &701228043
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2061,18 +1935,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &701228044
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 701228037}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!1 &703679730
 GameObject:
   m_ObjectHideFlags: 0
@@ -2188,11 +2050,11 @@ GameObject:
   - component: {fileID: 753290631}
   - component: {fileID: 753290630}
   - component: {fileID: 753290634}
-  - component: {fileID: 753290635}
+  - component: {fileID: 753290633}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Plataformers
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2289,6 +2151,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 753290628}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &753290633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 753290628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!65 &753290634
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2310,18 +2184,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &753290635
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 753290628}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!1 &845658123
 GameObject:
   m_ObjectHideFlags: 0
@@ -2335,11 +2197,11 @@ GameObject:
   - component: {fileID: 845658126}
   - component: {fileID: 845658125}
   - component: {fileID: 845658129}
-  - component: {fileID: 845658130}
+  - component: {fileID: 845658128}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Plataformers
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2436,6 +2298,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 845658123}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &845658128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 845658123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!65 &845658129
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2457,18 +2331,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &845658130
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 845658123}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!1 &850958645
 GameObject:
   m_ObjectHideFlags: 0
@@ -2482,11 +2344,11 @@ GameObject:
   - component: {fileID: 850958648}
   - component: {fileID: 850958647}
   - component: {fileID: 850958651}
-  - component: {fileID: 850958652}
+  - component: {fileID: 850958650}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Plataformers
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2583,6 +2445,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 850958645}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &850958650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 850958645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!65 &850958651
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2604,18 +2478,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &850958652
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 850958645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!1 &868403385
 GameObject:
   m_ObjectHideFlags: 0
@@ -2629,11 +2491,11 @@ GameObject:
   - component: {fileID: 868403388}
   - component: {fileID: 868403387}
   - component: {fileID: 868403391}
-  - component: {fileID: 868403392}
+  - component: {fileID: 868403390}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Plataformers
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2730,6 +2592,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 868403385}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &868403390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868403385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!65 &868403391
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2751,18 +2625,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &868403392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 868403385}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!1 &1022007594
 GameObject:
   m_ObjectHideFlags: 0
@@ -2776,11 +2638,11 @@ GameObject:
   - component: {fileID: 1022007597}
   - component: {fileID: 1022007596}
   - component: {fileID: 1022007600}
-  - component: {fileID: 1022007601}
+  - component: {fileID: 1022007599}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Plataformers
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -2877,6 +2739,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1022007594}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1022007599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1022007594}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!65 &1022007600
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2898,18 +2772,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1022007601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1022007594}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!1 &1040234366
 GameObject:
   m_ObjectHideFlags: 0
@@ -2923,11 +2785,11 @@ GameObject:
   - component: {fileID: 1040234369}
   - component: {fileID: 1040234368}
   - component: {fileID: 1040234372}
-  - component: {fileID: 1040234373}
+  - component: {fileID: 1040234371}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Plataformers
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3024,6 +2886,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1040234366}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1040234371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040234366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!65 &1040234372
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3045,18 +2919,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1040234373
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1040234366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!1 &1070349122
 GameObject:
   m_ObjectHideFlags: 0
@@ -3203,6 +3065,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1107809892}
+  - component: {fileID: 1107809891}
   - component: {fileID: 1107809893}
   m_Layer: 0
   m_Name: GameOverUI
@@ -3211,22 +3074,7 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1107809892
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1107809890}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -959.72046, y: -551.99994, z: -0.48703}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1485581627}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1107809893
+--- !u!114 &1107809891
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -3240,7 +3088,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameOverUI
   painelGameOver: {fileID: 1485581626}
   nomeCenaMenu: Menu
-  blur: {fileID: 371740886}
+  blur: {fileID: 0}
+--- !u!4 &1107809892
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107809890}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.27956, y: -11.99991, z: -0.48703}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1107809893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1107809890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.Volume
+  m_IsGlobal: 1
+  priority: 1
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 17376fd512c68c845bcb05b4f60bbf5c, type: 2}
 --- !u!1 &1132744223
 GameObject:
   m_ObjectHideFlags: 0
@@ -3325,7 +3205,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1107809893}
+      - m_Target: {fileID: 1107809891}
         m_TargetAssemblyTypeName: GameOverUI, Assembly-CSharp
         m_MethodName: TryAgain
         m_Mode: 1
@@ -3403,11 +3283,11 @@ GameObject:
   - component: {fileID: 1294447987}
   - component: {fileID: 1294447986}
   - component: {fileID: 1294447990}
-  - component: {fileID: 1294447991}
+  - component: {fileID: 1294447989}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Plataformers
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3504,6 +3384,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1294447984}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1294447989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1294447984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!65 &1294447990
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3525,18 +3417,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1294447991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1294447984}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!1 &1402139328
 GameObject:
   m_ObjectHideFlags: 0
@@ -3550,11 +3430,11 @@ GameObject:
   - component: {fileID: 1402139331}
   - component: {fileID: 1402139330}
   - component: {fileID: 1402139334}
-  - component: {fileID: 1402139335}
+  - component: {fileID: 1402139333}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Plataformers
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3651,6 +3531,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1402139328}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1402139333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402139328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!65 &1402139334
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3672,18 +3564,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1402139335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1402139328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!1 &1463017753
 GameObject:
   m_ObjectHideFlags: 0
@@ -3697,11 +3577,11 @@ GameObject:
   - component: {fileID: 1463017756}
   - component: {fileID: 1463017755}
   - component: {fileID: 1463017759}
-  - component: {fileID: 1463017760}
+  - component: {fileID: 1463017758}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Plataformers
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -3798,6 +3678,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1463017753}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1463017758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463017753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!65 &1463017759
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3819,18 +3711,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1463017760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1463017753}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!1 &1485581626
 GameObject:
   m_ObjectHideFlags: 0
@@ -3863,7 +3743,6 @@ RectTransform:
   m_Children:
   - {fileID: 2075752548}
   - {fileID: 1132744224}
-  - {fileID: 1107809892}
   m_Father: {fileID: 703679734}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3922,11 +3801,11 @@ GameObject:
   - component: {fileID: 1486275373}
   - component: {fileID: 1486275372}
   - component: {fileID: 1486275376}
-  - component: {fileID: 1486275377}
+  - component: {fileID: 1486275375}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Plataformers
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4023,6 +3902,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1486275370}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1486275375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486275370}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!65 &1486275376
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4044,18 +3935,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1486275377
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1486275370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!1 &1486623527
 GameObject:
   m_ObjectHideFlags: 0
@@ -4148,11 +4027,11 @@ GameObject:
   - component: {fileID: 1525905547}
   - component: {fileID: 1525905546}
   - component: {fileID: 1525905550}
-  - component: {fileID: 1525905551}
+  - component: {fileID: 1525905549}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Plataformers
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4249,6 +4128,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1525905544}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1525905549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1525905544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!65 &1525905550
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4270,18 +4161,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1525905551
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1525905544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!1 &1537547328
 GameObject:
   m_ObjectHideFlags: 0
@@ -4295,11 +4174,11 @@ GameObject:
   - component: {fileID: 1537547331}
   - component: {fileID: 1537547330}
   - component: {fileID: 1537547334}
-  - component: {fileID: 1537547335}
+  - component: {fileID: 1537547333}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Plataformers
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4396,6 +4275,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1537547328}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1537547333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1537547328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!65 &1537547334
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4417,18 +4308,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1537547335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1537547328}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!1 &1624694973
 GameObject:
   m_ObjectHideFlags: 0
@@ -4441,7 +4320,7 @@ GameObject:
   m_Layer: 0
   m_Name: Plataformers
   m_TagString: Plataformers
-  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4504,7 +4383,7 @@ GameObject:
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
-  m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4640,7 +4519,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5d90b2266550c9740b0fa66c30c06211, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerMove
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
   velocidade: 40
   referenciaCamera: {fileID: 330585546}
 --- !u!1 &1709408002
@@ -4656,11 +4535,11 @@ GameObject:
   - component: {fileID: 1709408005}
   - component: {fileID: 1709408004}
   - component: {fileID: 1709408008}
-  - component: {fileID: 1709408009}
+  - component: {fileID: 1709408007}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Plataformers
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4757,6 +4636,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1709408002}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1709408007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709408002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!65 &1709408008
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4778,18 +4669,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1709408009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1709408002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!1 &1717735374
 GameObject:
   m_ObjectHideFlags: 0
@@ -4803,11 +4682,11 @@ GameObject:
   - component: {fileID: 1717735377}
   - component: {fileID: 1717735376}
   - component: {fileID: 1717735380}
-  - component: {fileID: 1717735381}
+  - component: {fileID: 1717735379}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Plataformers
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -4904,6 +4783,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1717735374}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1717735379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717735374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!65 &1717735380
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4925,18 +4816,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1717735381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1717735374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!1 &1867791112
 GameObject:
   m_ObjectHideFlags: 0
@@ -5127,11 +5006,11 @@ GameObject:
   - component: {fileID: 2036982148}
   - component: {fileID: 2036982147}
   - component: {fileID: 2036982151}
-  - component: {fileID: 2036982152}
+  - component: {fileID: 2036982150}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Plataformers
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -5228,6 +5107,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2036982145}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2036982150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036982145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!65 &2036982151
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5249,18 +5140,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2036982152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2036982145}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!1 &2075752547
 GameObject:
   m_ObjectHideFlags: 0
@@ -5344,19 +5223,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2075752550}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1107809893}
-        m_TargetAssemblyTypeName: GameOverUI, Assembly-CSharp
-        m_MethodName: IrParaMenu
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &2075752550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5423,11 +5290,11 @@ GameObject:
   - component: {fileID: 2092991333}
   - component: {fileID: 2092991332}
   - component: {fileID: 2092991336}
-  - component: {fileID: 2092991337}
+  - component: {fileID: 2092991335}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Plataformers
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -5524,6 +5391,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2092991330}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2092991335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2092991330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!65 &2092991336
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5545,18 +5424,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2092991337
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2092991330}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!1 &2144461003
 GameObject:
   m_ObjectHideFlags: 0
@@ -5570,11 +5437,11 @@ GameObject:
   - component: {fileID: 2144461006}
   - component: {fileID: 2144461005}
   - component: {fileID: 2144461009}
-  - component: {fileID: 2144461010}
+  - component: {fileID: 2144461008}
   m_Layer: 0
   m_Name: PlataformersLocalizations
   m_TagString: Plataformers
-  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -5671,6 +5538,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2144461003}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2144461008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144461003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!65 &2144461009
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5692,18 +5571,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2144461010
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2144461003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f9eeb9fe86505c48bc6992e3a5d63a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GridBlock
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -5714,6 +5581,6 @@ SceneRoots:
   - {fileID: 207147558}
   - {fileID: 1658480748}
   - {fileID: 1624694974}
+  - {fileID: 1107809892}
   - {fileID: 703679734}
   - {fileID: 1486623530}
-  - {fileID: 288100818}
