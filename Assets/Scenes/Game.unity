@@ -458,10 +458,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
   blocksParent: {fileID: 1624694974}
-  minBrightness: 0.1
+  minBrightness: 0
   tempoInicial: 10
   tempoMinimo: 3
-  reducaoPorRodada: 0.8
+  reducaoPorRodada: 0.567
   corPadraoBlocos: {r: 1, g: 1, b: 1, a: 1}
   quantidadePiscadas: 3
   intervaloPiscada: 0.3
@@ -500,13 +500,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1107809893}
-        m_TargetAssemblyTypeName: UnityEngine.Rendering.Volume, Unity.RenderPipelines.Core.Runtime
-        m_MethodName: set_profile
-        m_Mode: 2
+        m_TargetAssemblyTypeName: GameOverUI, Assembly-CSharp
+        m_MethodName: MostrarGameOver
+        m_Mode: 1
         m_Arguments:
-          m_ObjectArgument: {fileID: 11400000, guid: 796b0daa7dd32dc42a446b1e92bd186f, type: 2}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Rendering.VolumeProfile,
-            Unity.RenderPipelines.Core.Runtime
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -868,7 +867,7 @@ Camera:
   far clip plane: 1000
   field of view: 48.8
   orthographic: 0
-  orthographic size: 5
+  orthographic size: 45
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -897,7 +896,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1171217182}
   m_LocalEulerAnglesHint: {x: 40, y: -45, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
@@ -953,6 +952,7 @@ GameObject:
   m_Component:
   - component: {fileID: 371740885}
   - component: {fileID: 371740884}
+  - component: {fileID: 371740886}
   m_Layer: 0
   m_Name: ColorSat
   m_TagString: Untagged
@@ -976,7 +976,7 @@ MonoBehaviour:
   priority: 1
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 796b0daa7dd32dc42a446b1e92bd186f, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 2d01fa6dc30916442b08b4dbe2205cdb, type: 2}
 --- !u!4 &371740885
 Transform:
   m_ObjectHideFlags: 0
@@ -992,6 +992,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &371740886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 371740883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f00cafb185792f746b8b5a80c87222aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ScreenBlurController
+  duracaoTransicao: 0.4
 --- !u!1 &394854345
 GameObject:
   m_ObjectHideFlags: 0
@@ -3065,7 +3078,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1107809892}
-  - component: {fileID: 1107809891}
   - component: {fileID: 1107809893}
   m_Layer: 0
   m_Name: GameOverUI
@@ -3074,21 +3086,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1107809891
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1107809890}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f24a1f68d6ae8b149a4d523e098e9ed2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameOverUI
-  painelGameOver: {fileID: 1485581626}
-  nomeCenaMenu: Menu
-  blur: {fileID: 0}
 --- !u!4 &1107809892
 Transform:
   m_ObjectHideFlags: 0
@@ -3113,14 +3110,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1107809890}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Script: {fileID: 11500000, guid: f24a1f68d6ae8b149a4d523e098e9ed2, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.Volume
-  m_IsGlobal: 1
-  priority: 1
-  blendDistance: 0
-  weight: 1
-  sharedProfile: {fileID: 11400000, guid: 17376fd512c68c845bcb05b4f60bbf5c, type: 2}
+  m_EditorClassIdentifier: Assembly-CSharp::GameOverUI
+  painelGameOver: {fileID: 1485581626}
+  nomeCenaMenu: Menu
+  blur: {fileID: 371740886}
 --- !u!1 &1132744223
 GameObject:
   m_ObjectHideFlags: 0
@@ -3205,7 +3200,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1107809891}
+      - m_Target: {fileID: 1107809893}
         m_TargetAssemblyTypeName: GameOverUI, Assembly-CSharp
         m_MethodName: TryAgain
         m_Mode: 1
@@ -3270,6 +3265,38 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
   m_EffectDistance: {x: 10, y: 10}
   m_UseGraphicAlpha: 1
+--- !u!1 &1171217181
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1171217182}
+  m_Layer: 0
+  m_Name: CameraControl
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1171217182
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1171217181}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 330585546}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1294447984
 GameObject:
   m_ObjectHideFlags: 0
@@ -3728,7 +3755,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1485581627
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5223,7 +5250,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2075752550}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1107809893}
+        m_TargetAssemblyTypeName: GameOverUI, Assembly-CSharp
+        m_MethodName: IrParaMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2075752550
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5575,7 +5614,7 @@ BoxCollider:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 330585546}
+  - {fileID: 1171217182}
   - {fileID: 371740885}
   - {fileID: 410087041}
   - {fileID: 207147558}
