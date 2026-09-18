@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
 public class SceneManagementMenu : MonoBehaviour
 {
     void CarregarJogo()
@@ -9,5 +10,6 @@ public class SceneManagementMenu : MonoBehaviour
     void SairDoJogo()
     {
                Application.Quit();
+        Debug.Log("Sair do jogo");
     }
 }
