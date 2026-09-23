@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour
         // Sorteia a cor alvo e aplica no fundo da câmera (Clear Flags precisa estar em "Solid Color")
         targetColor = ColorUtils.RandomColorNoBlack(minBrightness);
         Camera.main.backgroundColor = targetColor;
+        Debug.Log($"cor alvo = {targetColor}");
 
         // Sorteia uma cor aleatória pra cada bloco
         foreach (var block in blocks)

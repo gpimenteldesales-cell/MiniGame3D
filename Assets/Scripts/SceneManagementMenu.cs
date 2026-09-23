@@ -3,11 +3,11 @@ using UnityEngine.SceneManagement;
 
 public class SceneManagementMenu : MonoBehaviour
 {
-    void CarregarJogo()
+    public void CarregarJogo()
     {
-               SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Game");
     }
-    void SairDoJogo()
+    public void SairDoJogo()
     {
                Application.Quit();
         Debug.Log("Sair do jogo");
