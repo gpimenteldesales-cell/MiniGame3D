@@ -36,6 +36,7 @@ public class GridBlock : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            Debug.Log($"Player entrou no bloco {gameObject.name} com cor {BlockColor}");
             GameManager.Instance.OnPlayerEnteredBlock(this);
         }
     }
