@@ -7,9 +7,11 @@ public class SceneManagementMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Game");
     }
+
     public void SairDoJogo()
     {
-               Application.Quit();
         Debug.Log("Sair do jogo");
+
+        Application.Quit();
     }
 }

@@ -7,46 +7,47 @@ public class GridBlock : MonoBehaviour
 
     private Renderer rend;
 
-    void Awake()
+    private void Awake()
     {
         rend = GetComponent<Renderer>();
     }
 
-    /// <summary>
-    /// Define a cor visual e lógica do bloco (usada pelo GameManager ao sortear a rodada).
-    /// </summary>
     public void SetColor(Color color)
     {
         BlockColor = color;
         rend.material.color = color;
     }
 
-    /// <summary>
-    /// Muda só a cor visual (usado pra piscar verde/vermelho), sem alterar a cor lógica do bloco.
-    /// </summary>
     public void SetVisualColor(Color color)
     {
         rend.material.color = color;
     }
 
-    // IMPORTANTE: este collider precisa estar marcado como "Is Trigger".
-    // Se o bloco também precisa ser sólido (o player andar em cima dele),
-    // adicione um SEGUNDO BoxCollider no mesmo objeto SEM marcar Is Trigger.
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (!other.CompareTag("Player"))
+            return;
+
+        if (GameManager.Instance == null)
         {
-            Debug.Log($"Player entrou no bloco {gameObject.name} com cor {BlockColor}");
-            GameManager.Instance.OnPlayerEnteredBlock(this);
+            Debug.LogError(
+                $"GridBlock '{name}': GameManager não encontrado."
+            );
+
+            return;
         }
+
+        GameManager.Instance.OnPlayerEnteredBlock(this);
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player"))
-        {
-            GameManager.Instance.OnPlayerExitedBlock(this);
-        }
+        if (!other.CompareTag("Player"))
+            return;
+
+        if (GameManager.Instance == null)
+            return;
+
+        GameManager.Instance.OnPlayerExitedBlock(this);
     }
 }
-

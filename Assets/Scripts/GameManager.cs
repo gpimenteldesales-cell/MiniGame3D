@@ -8,46 +8,89 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
 
     [Header("Configuração")]
-    [Tooltip("Objeto pai que contém todos os blocos (GridBlock) da fase")]
+    [Tooltip("Objeto pai que contém todos os blocos da fase")]
     public Transform blocksParent;
 
-    [Tooltip("Brilho mínimo das cores sorteadas (evita preto)")]
-    [Range(0f, 1f)] public float minBrightness = 0.3f;
+    [Tooltip("Brilho mínimo das cores sorteadas")]
+    [Range(0f, 1f)]
+    public float minBrightness = 0.3f;
 
     [Header("Dificuldade")]
     public float tempoInicial = 3f;
     public float tempoMinimo = 0.6f;
-    [Range(0.5f, 0.99f)] public float reducaoPorRodada = 0.95f;
 
-    [Header("Feedback visual (piscar)")]
+    [Range(0.5f, 0.99f)]
+    public float reducaoPorRodada = 0.95f;
+
+    [Header("Feedback visual")]
     public Color corPadraoBlocos = Color.white;
+
     public int quantidadePiscadas = 3;
     public float intervaloPiscada = 0.15f;
-    [Tooltip("Pausa depois da vitória, antes de sortear a próxima rodada")]
+
+    [Tooltip("Pausa depois da vitória antes da próxima rodada")]
     public float pausaAposVitoria = 0.5f;
 
-    [Header("Eventos (opcional: ligue UI, sons, animações, etc.)")]
+    [Header("Eventos")]
     public UnityEvent onRoundWon;
     public UnityEvent onRoundLost;
     public UnityEvent onGameOver;
 
-    private List<GridBlock> blocks = new List<GridBlock>();
+    private readonly List<GridBlock> blocks = new List<GridBlock>();
+
+    // Blocos atualmente ocupados pelo Player.
+    private readonly List<GridBlock> currentBlocks = new List<GridBlock>();
+
     private GridBlock currentBlock;
+
     private Color targetColor;
     private float tempoAtual;
+
     private Coroutine timerCoroutine;
     private Coroutine loopDerrotaCoroutine;
-    private bool roundActive;
-    private int rodada = 0;
 
-    void Awake()
+    private bool roundActive;
+    private int rodada;
+
+    private void Awake()
     {
+        // Evita dois GameManagers na mesma cena.
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         Instance = this;
-        blocks.AddRange(blocksParent.GetComponentsInChildren<GridBlock>());
+
+        if (blocksParent == null)
+        {
+            Debug.LogError(
+                "GameManager: blocksParent não foi definido no Inspector."
+            );
+
+            enabled = false;
+            return;
+        }
+
+        blocks.AddRange(
+            blocksParent.GetComponentsInChildren<GridBlock>()
+        );
+
+        if (blocks.Count == 0)
+        {
+            Debug.LogError(
+                "GameManager: nenhum GridBlock foi encontrado em blocksParent."
+            );
+
+            enabled = false;
+            return;
+        }
+
         tempoAtual = tempoInicial;
     }
 
-    void Start()
+    private void Start()
     {
         NovaRodada();
     }
@@ -56,25 +99,49 @@ public class GameManager : MonoBehaviour
     {
         rodada++;
         roundActive = true;
-        currentBlock = null;
 
-        // Sorteia a cor alvo e aplica no fundo da câmera (Clear Flags precisa estar em "Solid Color")
-        targetColor = ColorUtils.RandomColorNoBlack(minBrightness);
-        Camera.main.backgroundColor = targetColor;
-        Debug.Log($"cor alvo = {targetColor}");
+        // IMPORTANTE:
+        // Não limpamos currentBlocks aqui.
+        // O Player pode continuar sobre o mesmo bloco entre rodadas.
 
-        // Sorteia uma cor aleatória pra cada bloco
-        foreach (var block in blocks)
+        if (Camera.main == null)
         {
-            block.SetColor(ColorUtils.RandomColorNoBlack(minBrightness));
+            Debug.LogError(
+                "GameManager: nenhuma câmera com a tag MainCamera foi encontrada."
+            );
+        }
+        else
+        {
+            targetColor =
+                ColorUtils.RandomColorNoBlack(minBrightness);
+
+            Camera.main.backgroundColor = targetColor;
         }
 
-        // Garante que pelo menos um bloco tenha exatamente a cor certa
+        // Sorteia as cores dos blocos.
+        foreach (GridBlock block in blocks)
+        {
+            block.SetColor(
+                ColorUtils.RandomColorNoBlack(minBrightness)
+            );
+        }
+
+        // Garante que exista pelo menos um bloco correto.
         int indiceCorreto = Random.Range(0, blocks.Count);
+
         blocks[indiceCorreto].SetColor(targetColor);
 
-        // Reinicia o timer da rodada
-        if (timerCoroutine != null) StopCoroutine(timerCoroutine);
+        Debug.Log(
+            $"Rodada {rodada} iniciada | " +
+            $"Tempo: {tempoAtual:F2}s | " +
+            $"Bloco correto: {blocks[indiceCorreto].name}"
+        );
+
+        if (timerCoroutine != null)
+        {
+            StopCoroutine(timerCoroutine);
+        }
+
         timerCoroutine = StartCoroutine(TimerRodada());
     }
 
@@ -82,33 +149,76 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(tempoAtual);
 
-        if (!roundActive) yield break;
+        if (!roundActive)
+            yield break;
 
-        // Tempo acabou: verifica o bloco em que o player está parado NESSE EXATO MOMENTO
-        bool acertou = currentBlock != null && ColorUtils.CoresIguais(currentBlock.BlockColor, targetColor);
+        bool acertou =
+            currentBlock != null &&
+            ColorUtils.CoresIguais(
+                currentBlock.BlockColor,
+                targetColor
+            );
 
         if (acertou)
+        {
             StartCoroutine(VitoriaRoutine());
+        }
         else
+        {
             StartCoroutine(DerrotaRoutine());
+        }
     }
 
-    /// <summary>
-    /// Chamado pelo GridBlock quando o player entra em um bloco (só atualiza o "bloco atual", não decide nada sozinho).
-    /// </summary>
+    // =========================================================
+    // PLAYER ENTROU
+    // =========================================================
+
     public void OnPlayerEnteredBlock(GridBlock block)
     {
+        if (block == null)
+            return;
+
+        if (!currentBlocks.Contains(block))
+        {
+            currentBlocks.Add(block);
+        }
+
         currentBlock = block;
+
+        Debug.Log(
+            $"Entrou em {block.name} | " +
+            $"Cor: {block.BlockColor}"
+        );
     }
 
-    /// <summary>
-    /// Chamado pelo GridBlock quando o player sai de um bloco.
-    /// </summary>
+    // =========================================================
+    // PLAYER SAIU
+    // =========================================================
+
     public void OnPlayerExitedBlock(GridBlock block)
     {
+        if (block == null)
+            return;
+
+        currentBlocks.Remove(block);
+
         if (currentBlock == block)
-            currentBlock = null;
+        {
+            if (currentBlocks.Count > 0)
+            {
+                currentBlock =
+                    currentBlocks[currentBlocks.Count - 1];
+            }
+            else
+            {
+                currentBlock = null;
+            }
+        }
     }
+
+    // =========================================================
+    // VITÓRIA
+    // =========================================================
 
     private IEnumerator VitoriaRoutine()
     {
@@ -116,19 +226,26 @@ public class GameManager : MonoBehaviour
 
         yield return PiscarBlocos(Color.green);
 
-        // Volta todos os blocos pra cor padrão antes da próxima rodada
-        foreach (var block in blocks)
+        foreach (GridBlock block in blocks)
+        {
             block.SetColor(corPadraoBlocos);
+        }
 
         onRoundWon?.Invoke();
 
-        // Aumenta a dificuldade gradualmente (tempo mais curto a cada rodada)
-        tempoAtual = Mathf.Max(tempoMinimo, tempoAtual * reducaoPorRodada);
+        tempoAtual = Mathf.Max(
+            tempoMinimo,
+            tempoAtual * reducaoPorRodada
+        );
 
         yield return new WaitForSeconds(pausaAposVitoria);
 
         NovaRodada();
     }
+
+    // =========================================================
+    // DERROTA
+    // =========================================================
 
     private IEnumerator DerrotaRoutine()
     {
@@ -137,53 +254,58 @@ public class GameManager : MonoBehaviour
         onRoundLost?.Invoke();
         onGameOver?.Invoke();
 
-        // Pisca vermelho pra sempre, até o jogador chamar ReiniciarJogo()
-        loopDerrotaCoroutine = StartCoroutine(PiscarBlocosInfinito(Color.red));
+        loopDerrotaCoroutine =
+            StartCoroutine(
+                PiscarBlocosInfinito(Color.red)
+            );
 
         yield break;
     }
 
-    /// <summary>
-    /// Igual ao PiscarBlocos, mas nunca para sozinho (usado no Game Over).
-    /// </summary>
     private IEnumerator PiscarBlocosInfinito(Color corFeedback)
     {
         while (true)
         {
-            foreach (var block in blocks)
+            foreach (GridBlock block in blocks)
+            {
                 block.SetVisualColor(corFeedback);
+            }
 
             yield return new WaitForSeconds(intervaloPiscada);
 
-            foreach (var block in blocks)
+            foreach (GridBlock block in blocks)
+            {
                 block.SetVisualColor(block.BlockColor);
+            }
 
             yield return new WaitForSeconds(intervaloPiscada);
         }
     }
 
-    /// <summary>
-    /// Pisca todos os blocos alternando entre a cor de feedback e a cor original de cada um.
-    /// </summary>
     private IEnumerator PiscarBlocos(Color corFeedback)
     {
         for (int i = 0; i < quantidadePiscadas; i++)
         {
-            foreach (var block in blocks)
+            foreach (GridBlock block in blocks)
+            {
                 block.SetVisualColor(corFeedback);
+            }
 
             yield return new WaitForSeconds(intervaloPiscada);
 
-            foreach (var block in blocks)
+            foreach (GridBlock block in blocks)
+            {
                 block.SetVisualColor(block.BlockColor);
+            }
 
             yield return new WaitForSeconds(intervaloPiscada);
         }
     }
 
-    /// <summary>
-    /// Chame isso num botão de "Reiniciar" pra recomeçar do zero.
-    /// </summary>
+    // =========================================================
+    // REINICIAR
+    // =========================================================
+
     public void ReiniciarJogo()
     {
         if (loopDerrotaCoroutine != null)
@@ -192,8 +314,16 @@ public class GameManager : MonoBehaviour
             loopDerrotaCoroutine = null;
         }
 
+        if (timerCoroutine != null)
+        {
+            StopCoroutine(timerCoroutine);
+            timerCoroutine = null;
+        }
+
         tempoAtual = tempoInicial;
         rodada = 0;
+        roundActive = false;
+
         NovaRodada();
     }
 }

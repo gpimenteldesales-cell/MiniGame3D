@@ -3,24 +3,21 @@ using UnityEngine.SceneManagement;
 
 public class GameOverUI : MonoBehaviour
 {
-    [Tooltip("Painel (GameObject) que contém os botões MENU e TRY AGAIN")]
+    [Tooltip("Painel que contém MENU e TRY AGAIN")]
     public GameObject painelGameOver;
 
-    [Tooltip("Nome EXATO da cena do menu principal (precisa estar no Build Settings)")]
+    [Tooltip("Nome exato da cena do menu")]
     public string nomeCenaMenu = "Menu";
 
-    [Tooltip("Referência ao ScreenBlurController da cena")]
+    [Tooltip("ScreenBlurController da cena")]
     public ScreenBlurController blur;
 
-    void Awake()
+    private void Awake()
     {
         if (painelGameOver != null)
             painelGameOver.SetActive(false);
     }
 
-    /// <summary>
-    /// Ligue isso no evento "On Round Lost" (ou "On Game Over") do GameManager, no Inspector.
-    /// </summary>
     public void MostrarGameOver()
     {
         if (painelGameOver != null)
@@ -30,9 +27,6 @@ public class GameOverUI : MonoBehaviour
             blur.AtivarBlur();
     }
 
-    /// <summary>
-    /// Ligue isso no OnClick do botão "TRY AGAIN".
-    /// </summary>
     public void TryAgain()
     {
         if (painelGameOver != null)
@@ -41,12 +35,10 @@ public class GameOverUI : MonoBehaviour
         if (blur != null)
             blur.DesativarBlur();
 
-        GameManager.Instance.ReiniciarJogo();
+        if (GameManager.Instance != null)
+            GameManager.Instance.ReiniciarJogo();
     }
 
-    /// <summary>
-    /// Ligue isso no OnClick do botão "MENU".
-    /// </summary>
     public void IrParaMenu()
     {
         SceneManager.LoadScene(nomeCenaMenu);
