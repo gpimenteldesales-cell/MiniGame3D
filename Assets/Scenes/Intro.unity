@@ -383,7 +383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NovaVoidIntro
   nextSceneName: Menu
-  skippable: 1
+  skippable: 0
   studioName: NOVAVOID
   subtitle: S T U D I O
   font: {fileID: 11400000, guid: 7e7100c8671fab045a4684294a39706b, type: 2}
@@ -391,7 +391,7 @@ MonoBehaviour:
   purple: {r: 0.62, g: 0.2, b: 1, a: 1}
   voxelCount: 56
   scanlineAlpha: 0.35
-  sting: {fileID: 0}
+  sting: {fileID: 8300000, guid: c6fc43c5be305154291a6a8ffe250aff, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
